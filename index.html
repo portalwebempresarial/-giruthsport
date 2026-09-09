@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giruth Sport | Ropa Deportiva Femenina</title>
+    <title>Giruth Sport | Fábrica de Ropa Deportiva y Uniformes en Bogotá</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome para Íconos -->
@@ -14,9 +14,9 @@
                 extend: {
                     colors: {
                         brand: {
-                            DEFAULT: '#db2777', // Rosa vibrante fitness
-                            dark: '#be185d',
-                            light: '#f472b6'
+                            DEFAULT: '#dc2626', // Rojo deportivo característico del IG
+                            dark: '#b91c1c',
+                            light: '#f87171'
                         }
                     }
                 }
@@ -24,183 +24,157 @@
         }
     </script>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased">
+<body class="bg-black text-slate-100 font-sans antialiased">
+
+    <!-- BARRA SUPERIOR DE UBICACIÓN -->
+    <div class="bg-brand text-white text-xs sm:text-sm font-semibold py-2 px-4 text-center">
+        <i class="fa-solid fa-location-dot mr-2"></i> Fábrica en Bogotá: Cra. 89 Bis #49 | Envíos a todo Colombia 🇨🇴
+    </div>
 
     <!-- HEADER / NAVBAR -->
-    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur border-b border-slate-800">
+    <header class="sticky top-0 z-50 bg-neutral-900/95 backdrop-blur border-b border-neutral-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-2">
                 <span class="text-2xl font-black tracking-wider text-white">GIRUTH<span class="text-brand">SPORT</span></span>
             </div>
-            <a href="https://wa.me/573001234567?text=Hola,%20quiero%20ver%20el%20catalogo%20y%20asesoria%20de%20tallas" target="_blank" class="bg-brand hover:bg-brand-dark text-white text-sm sm:text-base font-bold px-5 py-2.5 rounded-full transition shadow-lg shadow-brand/30 flex items-center gap-2">
-                <i class="fa-brands fa-whatsapp text-lg"></i> Comprar por WhatsApp
+            <a href="https://wa.me/573001234567?text=Hola,%20vi%20su%20landing%20page%20y%20quiero%20cotizar%20ropa%20deportiva%20o%20uniformes" target="_blank" class="bg-brand hover:bg-brand-dark text-white text-sm sm:text-base font-bold px-5 py-2.5 rounded-full transition shadow-lg shadow-brand/30 flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i> Cotizar por WhatsApp
             </a>
         </div>
     </header>
 
     <!-- HERO SECTION -->
-    <section class="relative bg-gradient-to-b from-slate-900 to-slate-950 py-16 sm:py-24 overflow-hidden">
+    <section class="relative bg-gradient-to-b from-neutral-900 to-black py-16 sm:py-24 overflow-hidden border-b border-neutral-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="space-y-6 text-center lg:text-left">
                 <span class="inline-block bg-brand/20 text-brand-light text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest border border-brand/30">
-                    ✨ Nueva Colección Disponible
+                    ⚽ Fábrica Directa & Personalizados
                 </span>
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
-                    Potencia tu entrenamiento con <span class="text-brand">estilo y horma perfecta</span>
+                    Tu estilo, tu equipo, <span class="text-brand">tu marca al siguiente nivel</span>
                 </h1>
                 <p class="text-slate-300 text-lg sm:text-xl max-w-xl mx-auto lg:mx-0">
-                    Diseños exclusivos pensados para mujeres que exigen máxima elasticidad, control de abdomen y cero transparencias en cada movimiento.
+                    Especialistas en la fabricación de uniformes de fútbol personalizados, sudaderas para toda la familia, buzos futboleros y camisas oversize con horma perfecta.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-                    <a href="https://wa.me/573001234567?text=Hola,%20quiero%20pedir%20mi%20outfit%20deportivo" target="_blank" class="bg-brand hover:bg-brand-dark text-white font-bold text-lg px-8 py-4 rounded-xl transition shadow-xl shadow-brand/40 flex items-center justify-center gap-3">
-                        <i class="fa-solid fa-fire"></i> ¡QUIERO MI OUTFIT AHORA!
+                    <a href="https://wa.me/573001234567?text=Hola,%20quiero%20diseñar%20mis%20uniformes%20y%20ropa%20deportiva" target="_blank" class="bg-brand hover:bg-brand-dark text-white font-bold text-lg px-8 py-4 rounded-xl transition shadow-xl shadow-brand/40 flex items-center justify-center gap-3">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i> HABLAR CON UN ASESOR AHORA
                     </a>
                 </div>
             </div>
-            <!-- Imagen Hero usando la primera foto del repo -->
+            <!-- Imagen Hero usando archivo local del repositorio -->
             <div class="relative mx-auto w-full max-w-md lg:max-w-none">
-                <div class="absolute -inset-1 bg-gradient-to-r from-brand to-purple-600 rounded-3xl blur opacity-30"></div>
-                <div class="relative bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 shadow-2xl aspect-[4/5]">
-                    <img src="WhatsApp%20Image%202026-09-03%20at%209.45.21%20AM.jpeg" alt="Outfit Giruth Sport" class="w-full h-full object-cover">
+                <div class="absolute -inset-1 bg-gradient-to-r from-brand to-red-800 rounded-3xl blur opacity-30"></div>
+                <div class="relative bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl aspect-[4/5]">
+                    <img src="WhatsApp%20Image%202026-09-03%20at%209.45.21%20AM.jpeg" alt="Giruth Sport Colección" class="w-full h-full object-cover">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- BENEFICIOS CLAVE -->
-    <section class="py-20 bg-slate-900/50 border-y border-slate-800">
+    <!-- LÍNEAS DE PRODUCTO / PORTAFOLIO TIPO IG -->
+    <section class="py-20 bg-black">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <h2 class="text-3xl sm:text-4xl font-extrabold">¿Por qué elegir <span class="text-brand">Giruth Sport</span>?</h2>
-                <p class="text-slate-400 text-lg">Tecnología y diseño creados para destacar tu figura con total seguridad.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 hover:border-brand/50 transition group">
-                    <div class="w-14 h-14 bg-brand/10 text-brand rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Cero Transparencias</h3>
-                    <p class="text-slate-400">Telas inteligentes de alta densidad que te brindan total seguridad y confianza en cada sentadilla.</p>
-                </div>
-                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 hover:border-brand/50 transition group">
-                    <div class="w-14 h-14 bg-brand/10 text-brand rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
-                        <i class="fa-solid fa-gem"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Horma Moldeadora</h3>
-                    <p class="text-slate-400">Diseños ergonómicos con control de abdomen que abrazan tu figura natural y estilizan tu silueta.</p>
-                </div>
-                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 hover:border-brand/50 transition group">
-                    <div class="w-14 h-14 bg-brand/10 text-brand rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
-                        <i class="fa-solid fa-wind"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Tejido Transpirable</h3>
-                    <p class="text-slate-400">Materiales frescos que repelen la humedad y se secan rápido en tus rutinas más pesadas.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PORTAFOLIO / CATÁLOGO DE FOTOS -->
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <h2 class="text-3xl sm:text-4xl font-extrabold">Portafolio & Catálogo <span class="text-brand">Exclusivo</span></h2>
-                <p class="text-slate-400 text-lg">Explora nuestros conjuntos y outfits diseñados para destacar.</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold">Nuestras Líneas de <span class="text-brand">Producción</span></h2>
+                <p class="text-slate-400 text-lg">Calidad superior en cada prenda, directo de fábrica para ti, tu club o tu negocio.</p>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Item 1 -->
-                <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 flex flex-col group">
+                <!-- Producto 1 -->
+                <div class="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 flex flex-col group">
                     <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.21%20AM.jpeg" alt="Colección Giruth Sport 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.26%20AM.jpeg" alt="Uniformes de Fútbol Personalizados" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-brand text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Top Ventas</span>
                     </div>
                     <div class="p-6 flex flex-col flex-grow justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white mb-1">Set Deportivo Premium</h3>
-                            <p class="text-slate-400 text-sm mb-4">Máximo ajuste y confort.</p>
+                            <h3 class="text-xl font-bold text-white mb-2">Uniformes de Fútbol Personalizados</h3>
+                            <p class="text-slate-400 text-sm mb-4">Diseña la pinta de tu equipo con escudos, nombres y números sublimados de alta durabilidad.</p>
                         </div>
-                        <a href="https://wa.me/573001234567?text=Hola,%20me%20interesa%20este%20conjunto%20del%20portafolio%20(Foto%201)" target="_blank" class="w-full bg-slate-800 hover:bg-brand text-white font-semibold py-3 rounded-xl text-center transition flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-whatsapp"></i> Preguntar Tallas
+                        <a href="https://wa.me/573001234567?text=Hola,%20estoy%20interesado%20en%20los%20Uniformes%20de%20Fútbol%20Personalizados" target="_blank" class="w-full bg-neutral-800 hover:bg-brand text-white font-semibold py-3 rounded-xl text-center transition flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg text-green-400"></i> Cotizar Uniformes
                         </a>
                     </div>
                 </div>
 
-                <!-- Item 2 -->
-                <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 flex flex-col group">
+                <!-- Producto 2 -->
+                <div class="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 flex flex-col group">
                     <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.22%20AM.jpeg" alt="Colección Giruth Sport 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.22%20AM.jpeg" alt="Sudaderas para toda la familia" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="p-6 flex flex-col flex-grow justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white mb-1">Conjunto Moldeador High Waist</h3>
-                            <p class="text-slate-400 text-sm mb-4">Efecto push-up y control.</p>
+                            <h3 class="text-xl font-bold text-white mb-2">Sudaderas Familiares & Deportivas</h3>
+                            <p class="text-slate-400 text-sm mb-4">Confort y abrigo para toda la familia. Conjuntos en fleece perchado ideales para entrenar o casuales.</p>
                         </div>
-                        <a href="https://wa.me/573001234567?text=Hola,%20me%20interesa%20este%20conjunto%20del%20portafolio%20(Foto%202)" target="_blank" class="w-full bg-slate-800 hover:bg-brand text-white font-semibold py-3 rounded-xl text-center transition flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-whatsapp"></i> Preguntar Tallas
+                        <a href="https://wa.me/573001234567?text=Hola,%20quiero%20información%20de%20las%20Sudaderas%20para%20toda%20la%20familia" target="_blank" class="w-full bg-neutral-800 hover:bg-brand text-white font-semibold py-3 rounded-xl text-center transition flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg text-green-400"></i> Cotizar Sudaderas
                         </a>
                     </div>
                 </div>
 
-                <!-- Item 3 -->
-                <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 flex flex-col group">
+                <!-- Producto 3 -->
+                <div class="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 flex flex-col group">
                     <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.23%20AM.jpeg" alt="Colección Giruth Sport 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.21%20AM.jpeg" alt="Buzos Futboleros" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="p-6 flex flex-col flex-grow justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white mb-1">Leggings de Compresión</h3>
-                            <p class="text-slate-400 text-sm mb-4">Elasticidad superior garantizada.</p>
+                            <h3 class="text-xl font-bold text-white mb-2">Buzos Futboleros & Urbanos</h3>
+                            <p class="text-slate-400 text-sm mb-4">Luce los colores de tu pasión con estilos modernos, capotas ajustadas y acabados de primera calidad.</p>
                         </div>
-                        <a href="https://wa.me/573001234567?text=Hola,%20me%20interesa%20este%20conjunto%20del%20portafolio%20(Foto%203)" target="_blank" class="w-full bg-slate-800 hover:bg-brand text-white font-semibold py-3 rounded-xl text-center transition flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-whatsapp"></i> Preguntar Tallas
+                        <a href="https://wa.me/573001234567?text=Hola,%20me%20interesan%20los%20Buzos%20Futboleros" target="_blank" class="w-full bg-neutral-800 hover:bg-brand text-white font-semibold py-3 rounded-xl text-center transition flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg text-green-400"></i> Cotizar Buzos
                         </a>
                     </div>
                 </div>
 
-                <!-- Item 4 -->
-                <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 flex flex-col group">
+                <!-- Producto 4 -->
+                <div class="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 flex flex-col group">
                     <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.24%20AM.jpeg" alt="Colección Giruth Sport 4" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.23%20AM.jpeg" alt="Camisas Oversize" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="p-6 flex flex-col flex-grow justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white mb-1">Top Deportivo Ergonómico</h3>
-                            <p class="text-slate-400 text-sm mb-4">Soporte firme para alto rendimiento.</p>
+                            <h3 class="text-xl font-bold text-white mb-2">Camisas Oversize</h3>
+                            <p class="text-slate-400 text-sm mb-4">Tendencia urbana con algodón pesado de alto gramaje, excelente caída y horma imponente.</p>
                         </div>
-                        <a href="https://wa.me/573001234567?text=Hola,%20me%20interesa%20este%20conjunto%20del%20portafolio%20(Foto%204)" target="_blank" class="w-full bg-slate-800 hover:bg-brand text-white font-semibold py-3 rounded-xl text-center transition flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-whatsapp"></i> Preguntar Tallas
+                        <a href="https://wa.me/573001234567?text=Hola,%20quiero%20ver%20modelos%20de%20Camisas%20Oversize" target="_blank" class="w-full bg-neutral-800 hover:bg-brand text-white font-semibold py-3 rounded-xl text-center transition flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg text-green-400"></i> Cotizar Oversize
                         </a>
                     </div>
                 </div>
 
-                <!-- Item 5 -->
-                <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 flex flex-col group">
+                <!-- Producto 5 -->
+                <div class="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 flex flex-col group">
                     <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.25%20AM.jpeg" alt="Colección Giruth Sport 5" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.24%20AM.jpeg" alt="Ropa Deportiva General" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="p-6 flex flex-col flex-grow justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white mb-1">Outfit Biker Fitness</h3>
-                            <p class="text-slate-400 text-sm mb-4">Frescura y estilo para entrenar.</p>
+                            <h3 class="text-xl font-bold text-white mb-2">Línea Deportiva & Fitness</h3>
+                            <p class="text-slate-400 text-sm mb-4">Conjuntos y prendas de alto rendimiento con telas transpirables y cero transparencias.</p>
                         </div>
-                        <a href="https://wa.me/573001234567?text=Hola,%20me%20interesa%20este%20conjunto%20del%20portafolio%20(Foto%205)" target="_blank" class="w-full bg-slate-800 hover:bg-brand text-white font-semibold py-3 rounded-xl text-center transition flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-whatsapp"></i> Preguntar Tallas
+                        <a href="https://wa.me/573001234567?text=Hola,%20quiero%20info%20de%20la%20línea%20deportiva" target="_blank" class="w-full bg-neutral-800 hover:bg-brand text-white font-semibold py-3 rounded-xl text-center transition flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg text-green-400"></i> Consultar Modelos
                         </a>
                     </div>
                 </div>
 
-                <!-- Item 6 -->
-                <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 flex flex-col group">
+                <!-- Producto 6 -->
+                <div class="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 flex flex-col group">
                     <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.26%20AM.jpeg" alt="Colección Giruth Sport 6" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.25%20AM.jpeg" alt="Fabricación por Mayor" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-white text-black text-xs font-bold px-3 py-1 rounded-full uppercase">Mayoristas</span>
                     </div>
                     <div class="p-6 flex flex-col flex-grow justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white mb-1">Colección Exclusiva Giruth</h3>
-                            <p class="text-slate-400 text-sm mb-4">Diseños únicos de alta gama.</p>
+                            <h3 class="text-xl font-bold text-white mb-2">Fabricación al Por Mayor</h3>
+                            <p class="text-slate-400 text-sm mb-4">Impulsa tu emprendimiento con precios especiales para distribuidores y marcas independientes.</p>
                         </div>
-                        <a href="https://wa.me/573001234567?text=Hola,%20me%20interesa%20este%20conjunto%20del%20portafolio%20(Foto%206)" target="_blank" class="w-full bg-slate-800 hover:bg-brand text-white font-semibold py-3 rounded-xl text-center transition flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-whatsapp"></i> Preguntar Tallas
+                        <a href="https://wa.me/573001234567?text=Hola,%20soy%20mayorista%20y%20quiero%20ver%20catálogo%20y%20precios" target="_blank" class="w-full bg-neutral-800 hover:bg-brand text-white font-semibold py-3 rounded-xl text-center transition flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg text-green-400"></i> Soy Mayorista
                         </a>
                     </div>
                 </div>
@@ -208,66 +182,52 @@
         </div>
     </section>
 
-    <!-- TESTIMONIOS -->
-    <section class="py-20 bg-slate-900/50 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <h2 class="text-3xl sm:text-4xl font-extrabold">Lo que dicen nuestras <span class="text-brand">Clientas</span></h2>
-                <p class="text-slate-400 text-lg">Mujeres reales entrenando seguras y hermosas.</p>
+    <!-- SECCIÓN CONFIANZA / FABRICA BOGOTÁ -->
+    <section class="py-16 bg-neutral-900 border-y border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="p-6 space-y-3">
+                <div class="w-12 h-12 bg-brand/20 text-brand rounded-full flex items-center justify-center mx-auto text-xl">
+                    <i class="fa-solid fa-industry"></i>
+                </div>
+                <h4 class="font-bold text-lg">Fabricación Propia</h4>
+                <p class="text-slate-400 text-sm">Control absoluto de calidad en costura, telas y sublimación.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 flex flex-col justify-between">
-                    <div>
-                        <div class="flex text-amber-400 mb-4 space-x-1">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-slate-300 italic mb-6">"Los conjuntos de Giruth Sport me encantan, la tela no se transparenta para nada y horman divino. ¡Los amo para ir al gimnasio!"</p>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-brand/20 rounded-full flex items-center justify-center font-bold text-brand">CR</div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm">Camila R.</h4>
-                            <span class="text-slate-500 text-xs">Cliente Verificada</span>
-                        </div>
-                    </div>
+            <div class="p-6 space-y-3">
+                <div class="w-12 h-12 bg-brand/20 text-brand rounded-full flex items-center justify-center mx-auto text-xl">
+                    <i class="fa-solid fa-shirt"></i>
                 </div>
-                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 flex flex-col justify-between">
-                    <div>
-                        <div class="flex text-amber-400 mb-4 space-x-1">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-slate-300 italic mb-6">"El envío fue súper rápido y la calidad de las telas supera por mucho el precio. ¡Súper recomendadas para entrenar cómoda!"</p>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-brand/20 rounded-full flex items-center justify-center font-bold text-brand">VM</div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm">Valentina M.</h4>
-                            <span class="text-slate-500 text-xs">Cliente Verificada</span>
-                        </div>
-                    </div>
+                <h4 class="font-bold text-lg">Diseño Personalizado</h4>
+                <p class="text-slate-400 text-sm">Creamos tu idea desde cero para tu equipo, familia o marca.</p>
+            </div>
+            <div class="p-6 space-y-3">
+                <div class="w-12 h-12 bg-brand/20 text-brand rounded-full flex items-center justify-center mx-auto text-xl">
+                    <i class="fa-solid fa-truck-fast"></i>
                 </div>
+                <h4 class="font-bold text-lg">Envíos Seguros</h4>
+                <p class="text-slate-400 text-sm">Despachos rápidos desde Bogotá a todo el territorio nacional.</p>
             </div>
         </div>
     </section>
 
-    <!-- CIERRE CTA -->
-    <section class="py-20 bg-gradient-to-t from-slate-900 to-slate-950 text-center">
+    <!-- CIERRE CTA WHATSAPP -->
+    <section class="py-20 bg-gradient-to-t from-neutral-900 to-black text-center">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-            <h2 class="text-3xl sm:text-5xl font-black text-white">¡No te quedes sin tu outfit favorito!</h2>
-            <p class="text-slate-300 text-lg max-w-xl mx-auto">Escríbenos directamente para recibir asesoría personalizada de tallas y asegurar tu pedido hoy mismo.</p>
+            <h2 class="text-3xl sm:text-5xl font-black text-white">¿Listo para hacer realidad tu proyecto o dotación?</h2>
+            <p class="text-slate-300 text-lg max-w-xl mx-auto">Escríbenos ahora a WhatsApp y recibe atención personalizada inmediata con nuestros asesores.</p>
             <div class="pt-4">
-                <a href="https://wa.me/573001234567?text=Hola,%20quiero%20pedir%20asesoria%20de%20tallas%20y%20comprar" target="_blank" class="inline-flex items-center gap-3 bg-brand hover:bg-brand-dark text-white font-bold text-xl px-10 py-5 rounded-2xl shadow-2xl shadow-brand/50 transition">
-                    <i class="fa-brands fa-whatsapp text-2xl"></i> PEDIR ASESORÍA POR WHATSAPP
+                <a href="https://wa.me/573001234567?text=Hola,%20quiero%20iniciar%20mi%20cotización%20en%20Giruth%20Sport" target="_blank" class="inline-flex items-center gap-3 bg-brand hover:bg-brand-dark text-white font-bold text-xl px-10 py-5 rounded-2xl shadow-2xl shadow-brand/50 transition">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i> INICIAR COTIZACIÓN POR WHATSAPP
                 </a>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-slate-950 border-t border-slate-900 py-8 text-center text-slate-500 text-sm">
-        <div class="max-w-7xl mx-auto px-4 space-y-2">
-            <p class="font-bold text-slate-400">GIRUTH SPORT</p>
-            <p>© 2026 Todos los derechos reservados.</p>
+    <footer class="bg-black border-t border-neutral-900 py-10 text-slate-500 text-sm">
+        <div class="max-w-7xl mx-auto px-4 space-y-4 text-center">
+            <p class="font-bold text-white text-lg">GIRUTH SPORT</p>
+            <p><i class="fa-solid fa-location-dot text-brand mr-1"></i> Cra. 89 Bis #49, Bogotá, Colombia</p>
+            <p class="text-xs text-slate-600">© 2026 Giruth Sport. Todos los derechos reservados.</p>
         </div>
     </footer>
 
