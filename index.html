@@ -62,11 +62,11 @@
                     </button>
                 </div>
             </div>
-            <!-- Imagen Hero (Ruta local directa para que no falle) -->
+            <!-- Imagen Hero con ruta absoluta RAW de GitHub -->
             <div class="relative mx-auto w-full max-w-md lg:max-w-none">
                 <div class="absolute -inset-1 bg-gradient-to-r from-brand to-red-800 rounded-3xl blur opacity-30"></div>
                 <div class="relative bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl aspect-[4/5]">
-                    <img src="WhatsApp%20Image%202026-09-03%20at%209.45.21%20AM.jpeg" alt="Giruth Sport Colección" class="w-full h-full object-cover">
+                    <img src="https://raw.githubusercontent.com/landingpagedemiproyecto/-giruthsport/main/WhatsApp%20Image%202026-09-03%20at%209.45.21%20AM.jpeg" alt="Giruth Sport Colección" class="w-full h-full object-cover">
                 </div>
             </div>
         </div>
@@ -84,7 +84,7 @@
                 <!-- Producto 1 (Abre el modal) -->
                 <div class="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 flex flex-col group cursor-pointer hover:border-brand transition shadow-lg" onclick="abrirCatalogo()">
                     <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.26%20AM.jpeg" alt="Uniformes de Fútbol" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="https://raw.githubusercontent.com/landingpagedemiproyecto/-giruthsport/main/WhatsApp%20Image%202026-09-03%20at%209.45.26%20AM.jpeg" alt="Uniformes de Fútbol" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <span class="absolute top-4 left-4 bg-brand text-white text-xs font-bold px-3 py-1 rounded-full uppercase"><i class="fa-solid fa-fire"></i> Catálogo Completo</span>
                     </div>
                     <div class="p-6 flex flex-col flex-grow justify-between">
@@ -101,7 +101,7 @@
                 <!-- Producto 2 -->
                 <div class="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 flex flex-col group shadow-lg">
                     <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.22%20AM.jpeg" alt="Sudaderas Familiares" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="https://raw.githubusercontent.com/landingpagedemiproyecto/-giruthsport/main/WhatsApp%20Image%202026-09-03%20at%209.45.22%20AM.jpeg" alt="Sudaderas Familiares" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="p-6 flex flex-col flex-grow justify-between">
                         <div>
@@ -117,7 +117,7 @@
                 <!-- Producto 3 -->
                 <div class="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 flex flex-col group shadow-lg">
                     <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.23%20AM.jpeg" alt="Buzos Fútboleros" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="https://raw.githubusercontent.com/landingpagedemiproyecto/-giruthsport/main/WhatsApp%20Image%202026-09-03%20at%209.45.23%20AM.jpeg" alt="Buzos Fútboleros" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="p-6 flex flex-col flex-grow justify-between">
                         <div>
@@ -149,10 +149,10 @@
             <!-- Animación de carga -->
             <div id="loadingCatalogo" class="text-center py-20 hidden">
                 <i class="fa-solid fa-circle-notch fa-spin text-5xl text-brand mb-4"></i>
-                <p class="text-slate-400">Cargando colecciones...</p>
+                <p class="text-slate-400 mt-4">Cargando colecciones...</p>
             </div>
 
-            <!-- Contenedor donde JS inyectará TODAS las imágenes -->
+            <!-- Contenedor del Grid -->
             <div id="gridCatalogo" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 pb-20">
                 <!-- Se llena con JavaScript dinámicamente -->
             </div>
@@ -195,62 +195,79 @@
         </div>
     </footer>
 
-    <!-- SCRIPTS PARA EL MODAL Y EL CATÁLOGO DINÁMICO VIA GITHUB API -->
+    <!-- SCRIPTS DE GALERÍA CON SISTEMA ANTI-FALLOS -->
     <script>
         const modal = document.getElementById('modalCatalogo');
         const body = document.body;
         const grid = document.getElementById('gridCatalogo');
         const loading = document.getElementById('loadingCatalogo');
+        
+        // Base URL para las imágenes de GitHub
+        const baseUrl = "https://raw.githubusercontent.com/landingpagedemiproyecto/-giruthsport/main/";
 
-        // Función dinámica que lee tu repositorio de GitHub directamente
+        // LISTA DE RESPALDO: Si GitHub bloquea la conexión por Rate Limit, usaremos estas garantizando que nunca se vea vacío.
+        const backupImages = [
+            "1000097019.jpg", "1000107217.jpg", "1000107226.jpg", "1000113841.jpg", 
+            "1000113844.jpg", "1000113914.jpg", "1000269712.jpg", "1000269714.jpg", 
+            "1000269715.jpg", "1000269716.jpg", "1000269717.jpg", "1000269718.jpg", 
+            "1000269719.jpg", "1000269720.jpg", "1000269721.jpg"
+        ];
+
         async function cargarCatalogo() {
-            // Si ya se cargaron las imágenes, no volver a hacer la petición
             if(grid.innerHTML.trim() !== '') return; 
-
             loading.classList.remove('hidden');
 
             try {
-                // Previene el caché pidiendo la versión exacta del segundo actual
-                const timestamp = new Date().getTime();
-                const response = await fetch('https://api.github.com/repos/landingpagedemiproyecto/-giruthsport/contents/?t=' + timestamp);
+                // Intentamos conectar con la API
+                const response = await fetch('https://api.github.com/repos/landingpagedemiproyecto/-giruthsport/contents/');
+                
+                // Si GitHub nos bloquea (Error 403 o 429 por muchas peticiones) disparamos el error hacia el catch
+                if (!response.ok) {
+                    throw new Error(`API Rate Limit o Error de red: ${response.status}`);
+                }
+
                 const data = await response.json();
-
-                // Filtramos SOLO los archivos .jpg (Tus referencias de camisetas) 
-                // Y nos aseguramos de excluir las "WhatsApp Image..." que tienen extensión .jpeg
                 const imagenesCatalogo = data.filter(file => file.name.toLowerCase().endsWith('.jpg'));
+                
+                // Extraemos solo los nombres de los archivos obtenidos
+                const nombresArchivos = imagenesCatalogo.map(file => file.name);
+                renderizarGaleria(nombresArchivos);
 
-                loading.classList.add('hidden');
-
-                // Recorremos todas las imágenes encontradas y construimos las tarjetas
-                imagenesCatalogo.forEach(file => {
-                    const imgName = file.name;
-                    const referencia = imgName.replace('.jpg', '').replace('.JPG', '');
-                    const wsMensaje = `Hola, quiero cotizar la camiseta Ref: ${referencia}`;
-                    const wsEnlace = `https://wa.me/573059390106?text=${encodeURIComponent(wsMensaje)}`;
-                    const urlImagenCompleta = file.download_url; // Obtiene la URL directa de la camisa
-
-                    const cardHTML = `
-                        <div class="bg-neutral-900 rounded-xl overflow-hidden border border-neutral-800 flex flex-col group shadow-lg">
-                            <div class="aspect-square overflow-hidden relative bg-black">
-                                <img src="${urlImagenCompleta}" alt="Camiseta ${referencia}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
-                            </div>
-                            <div class="p-3 flex flex-col justify-between flex-grow bg-neutral-900">
-                                <span class="text-[10px] md:text-xs text-slate-500 font-mono mb-2">Ref: ${referencia}</span>
-                                <a href="${wsEnlace}" target="_blank" class="w-full bg-neutral-800 hover:bg-brand text-white text-xs md:text-sm font-bold py-2 rounded-lg text-center transition flex items-center justify-center gap-1 md:gap-2">
-                                    <i class="fa-brands fa-whatsapp text-green-400"></i> Cotizar
-                                </a>
-                            </div>
-                        </div>
-                    `;
-                    grid.innerHTML += cardHTML;
-                });
             } catch (error) {
-                loading.innerHTML = '<p class="text-red-500">Hubo un error cargando el catálogo. Por favor, recarga la página.</p>';
-                console.error("Error al obtener las imágenes de GitHub:", error);
+                console.warn("Se activó el sistema de rescate de la galería debido a:", error.message);
+                // Si la API falla, renderizamos las imágenes de respaldo para no perder clientes
+                renderizarGaleria(backupImages);
             }
         }
 
-        // Abrir y cerrar ventana modal
+        // Función que pinta las imágenes en el HTML
+        function renderizarGaleria(nombresArchivos) {
+            loading.classList.add('hidden');
+            
+            nombresArchivos.forEach(nombreImg => {
+                const referencia = nombreImg.replace('.jpg', '').replace('.JPG', '');
+                const wsMensaje = `Hola, quiero cotizar la camiseta Ref: ${referencia}`;
+                const wsEnlace = `https://wa.me/573059390106?text=${encodeURIComponent(wsMensaje)}`;
+                const urlImagenCompleta = baseUrl + nombreImg;
+
+                const cardHTML = `
+                    <div class="bg-neutral-900 rounded-xl overflow-hidden border border-neutral-800 flex flex-col group shadow-lg">
+                        <div class="aspect-square overflow-hidden relative bg-black">
+                            <img src="${urlImagenCompleta}" alt="Camiseta ${referencia}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+                        </div>
+                        <div class="p-3 flex flex-col justify-between flex-grow bg-neutral-900">
+                            <span class="text-[10px] md:text-xs text-slate-500 font-mono mb-2">Ref: ${referencia}</span>
+                            <a href="${wsEnlace}" target="_blank" class="w-full bg-neutral-800 hover:bg-brand text-white text-xs md:text-sm font-bold py-2 rounded-lg text-center transition flex items-center justify-center gap-1 md:gap-2">
+                                <i class="fa-brands fa-whatsapp text-green-400"></i> Cotizar
+                            </a>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += cardHTML;
+            });
+        }
+
+        // Funciones para abrir y cerrar la ventana emergente
         function abrirCatalogo() {
             modal.classList.remove('hidden');
             body.classList.add('overflow-hidden'); 
@@ -262,7 +279,7 @@
             body.classList.remove('overflow-hidden');
         }
 
-        // Cerrar con la tecla Escape
+        // Permite cerrar la galería presionando la tecla Escape
         document.addEventListener('keydown', function(event) {
             if (event.key === "Escape" && !modal.classList.contains('hidden')) {
                 cerrarCatalogo();
