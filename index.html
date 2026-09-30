@@ -62,7 +62,7 @@
                     </button>
                 </div>
             </div>
-            <!-- Imagen Hero desde GitHub -->
+            <!-- Imagen Hero desde GitHub (Carga con las .jpeg) -->
             <div class="relative mx-auto w-full max-w-md lg:max-w-none">
                 <div class="absolute -inset-1 bg-gradient-to-r from-brand to-red-800 rounded-3xl blur opacity-30"></div>
                 <div class="relative bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl aspect-[4/5]">
@@ -85,7 +85,7 @@
                 <div class="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 flex flex-col group cursor-pointer hover:border-brand transition shadow-lg" onclick="abrirCatalogo()">
                     <div class="aspect-[4/5] overflow-hidden relative">
                         <img src="https://raw.githubusercontent.com/landingpagedemiproyecto/-giruthsport/main/WhatsApp%20Image%202026-09-03%20at%209.45.26%20AM.jpeg" alt="Uniformes de Fútbol" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <span class="absolute top-4 left-4 bg-brand text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Catálogo 128+ Modelos</span>
+                        <span class="absolute top-4 left-4 bg-brand text-white text-xs font-bold px-3 py-1 rounded-full uppercase"><i class="fa-solid fa-fire"></i> Catálogo Completo</span>
                     </div>
                     <div class="p-6 flex flex-col flex-grow justify-between">
                         <div>
@@ -143,12 +143,18 @@
             
             <div class="clear-both mb-8 text-center pt-8">
                 <h2 class="text-3xl md:text-5xl font-black text-white mb-4">Catálogo de <span class="text-brand">Camisetas</span></h2>
-                <p class="text-slate-400 max-w-2xl mx-auto">Elige la referencia que te guste y haz clic en cotizar. Nosotros nos encargamos de personalizarla con tu logo y colores.</p>
+                <p class="text-slate-400 max-w-2xl mx-auto">Elige la referencia que te guste y haz clic en cotizar. Se cargan automáticamente todos los modelos disponibles en nuestro sistema.</p>
             </div>
 
-            <!-- Contenedor donde JS inyectará las imágenes -->
+            <!-- Animación de carga -->
+            <div id="loadingCatalogo" class="text-center py-20 hidden">
+                <i class="fa-solid fa-circle-notch fa-spin text-5xl text-brand mb-4"></i>
+                <p class="text-slate-400">Cargando colecciones desde el servidor...</p>
+            </div>
+
+            <!-- Contenedor donde JS inyectará TODAS las imágenes -->
             <div id="gridCatalogo" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 pb-20">
-                <!-- Se llena con JavaScript -->
+                <!-- Se llena con JavaScript dinámicamente -->
             </div>
         </div>
     </div>
@@ -180,70 +186,74 @@
         </div>
     </section>
 
-    <!-- SCRIPTS PARA EL MODAL Y EL CATÁLOGO -->
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-neutral-900 py-10 text-slate-500 text-sm">
+        <div class="max-w-7xl mx-auto px-4 space-y-4 text-center">
+            <p class="font-bold text-white text-lg">GIRUTH SPORT</p>
+            <p><i class="fa-solid fa-location-dot text-brand mr-1"></i> Cra. 89 Bis #49, Bogotá, Colombia</p>
+            <p class="text-xs text-slate-600">© 2026 Giruth Sport. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS PARA EL MODAL Y EL CATÁLOGO DINÁMICO VIA GITHUB API -->
     <script>
-        // Aquí agregué la ruta absoluta base a tu repositorio para asegurar que carguen.
-        const baseUrl = "https://raw.githubusercontent.com/landingpagedemiproyecto/-giruthsport/main/";
-
-        const imagenesCatalogo = [
-            "1000097019.jpg",
-            "1000107217.jpg",
-            "1000107226.jpg",
-            "1000113841.jpg",
-            "1000113844.jpg",
-            "1000113914.jpg",
-            "1000269712.jpg",
-            "1000269714.jpg",
-            "1000269715.jpg",
-            "1000269716.jpg",
-            "1000269717.jpg",
-            "1000269718.jpg",
-            "1000269719.jpg",
-            "1000269720.jpg",
-            "1000269721.jpg"
-            // Puedes seguir agregando el resto de tus 128 imágenes abajo,
-            // cargaran de forma automática siempre que estén subidas en el GitHub.
-        ];
-
-        function cargarCatalogo() {
-            const grid = document.getElementById('gridCatalogo');
-            grid.innerHTML = ''; 
-
-            imagenesCatalogo.forEach(img => {
-                const referencia = img.replace('.jpg', '');
-                const wsMensaje = `Hola, quiero cotizar la camiseta Ref: ${referencia}`;
-                const wsEnlace = `https://wa.me/573059390106?text=${encodeURIComponent(wsMensaje)}`;
-                
-                // Unimos la URL base de tu GitHub con el nombre de la imagen
-                const urlImagenCompleta = baseUrl + img;
-
-                const cardHTML = `
-                    <div class="bg-neutral-900 rounded-xl overflow-hidden border border-neutral-800 flex flex-col group shadow-lg">
-                        <div class="aspect-square overflow-hidden relative bg-black">
-                            <img src="${urlImagenCompleta}" alt="Camiseta ${referencia}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
-                        </div>
-                        <div class="p-3 flex flex-col justify-between flex-grow bg-neutral-900">
-                            <span class="text-[10px] md:text-xs text-slate-500 font-mono mb-2">Ref: ${referencia}</span>
-                            <a href="${wsEnlace}" target="_blank" class="w-full bg-neutral-800 hover:bg-brand text-white text-xs md:text-sm font-bold py-2 rounded-lg text-center transition flex items-center justify-center gap-1 md:gap-2">
-                                <i class="fa-brands fa-whatsapp text-green-400"></i> Cotizar
-                            </a>
-                        </div>
-                    </div>
-                `;
-                grid.innerHTML += cardHTML;
-            });
-        }
-
         const modal = document.getElementById('modalCatalogo');
         const body = document.body;
+        const grid = document.getElementById('gridCatalogo');
+        const loading = document.getElementById('loadingCatalogo');
 
+        // Función dinámica que lee tu repositorio de GitHub directamente
+        async function cargarCatalogo() {
+            // Si ya se cargaron las imágenes, no volver a hacer la petición
+            if(grid.innerHTML.trim() !== '') return; 
+
+            loading.classList.remove('hidden');
+
+            try {
+                // Hacemos una petición a la API pública de tu GitHub para listar todos los archivos
+                const response = await fetch('https://api.github.com/repos/landingpagedemiproyecto/-giruthsport/contents/');
+                const data = await response.json();
+
+                // Filtramos SOLO los archivos .jpg (Tus referencias de camisetas) 
+                // y descartamos las .jpeg (las fotos de la landing como WhatsApp Image...)
+                const imagenesCatalogo = data.filter(file => file.name.endsWith('.jpg'));
+
+                loading.classList.add('hidden');
+
+                // Recorremos todas las imágenes encontradas y construimos las tarjetas
+                imagenesCatalogo.forEach(file => {
+                    const imgName = file.name;
+                    const referencia = imgName.replace('.jpg', '');
+                    const wsMensaje = `Hola, quiero cotizar la camiseta Ref: ${referencia}`;
+                    const wsEnlace = `https://wa.me/573059390106?text=${encodeURIComponent(wsMensaje)}`;
+                    const urlImagenCompleta = file.download_url; // Obtiene la URL directa (Raw)
+
+                    const cardHTML = `
+                        <div class="bg-neutral-900 rounded-xl overflow-hidden border border-neutral-800 flex flex-col group shadow-lg">
+                            <div class="aspect-square overflow-hidden relative bg-black">
+                                <img src="${urlImagenCompleta}" alt="Camiseta ${referencia}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+                            </div>
+                            <div class="p-3 flex flex-col justify-between flex-grow bg-neutral-900">
+                                <span class="text-[10px] md:text-xs text-slate-500 font-mono mb-2">Ref: ${referencia}</span>
+                                <a href="${wsEnlace}" target="_blank" class="w-full bg-neutral-800 hover:bg-brand text-white text-xs md:text-sm font-bold py-2 rounded-lg text-center transition flex items-center justify-center gap-1 md:gap-2">
+                                    <i class="fa-brands fa-whatsapp text-green-400"></i> Cotizar
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    grid.innerHTML += cardHTML;
+                });
+            } catch (error) {
+                loading.innerHTML = '<p class="text-red-500">Hubo un error cargando el catálogo. Por favor, recarga la página.</p>';
+                console.error("Error al obtener las imágenes de GitHub:", error);
+            }
+        }
+
+        // Abrir y cerrar ventana modal
         function abrirCatalogo() {
             modal.classList.remove('hidden');
             body.classList.add('overflow-hidden'); 
-            
-            if(document.getElementById('gridCatalogo').innerHTML.trim() === '') {
-                cargarCatalogo();
-            }
+            cargarCatalogo(); // Llama a la función que descarga las fotos
         }
 
         function cerrarCatalogo() {
@@ -251,6 +261,7 @@
             body.classList.remove('overflow-hidden');
         }
 
+        // Cerrar con la tecla Escape
         document.addEventListener('keydown', function(event) {
             if (event.key === "Escape" && !modal.classList.contains('hidden')) {
                 cerrarCatalogo();
