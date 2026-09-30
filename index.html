@@ -62,11 +62,11 @@
                     </button>
                 </div>
             </div>
-            <!-- Imagen Hero -->
+            <!-- Imagen Hero desde GitHub -->
             <div class="relative mx-auto w-full max-w-md lg:max-w-none">
                 <div class="absolute -inset-1 bg-gradient-to-r from-brand to-red-800 rounded-3xl blur opacity-30"></div>
                 <div class="relative bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl aspect-[4/5]">
-                    <img src="WhatsApp%20Image%202026-09-03%20at%209.45.21%20AM.jpeg" alt="Giruth Sport Colección" class="w-full h-full object-cover">
+                    <img src="https://raw.githubusercontent.com/landingpagedemiproyecto/-giruthsport/main/WhatsApp%20Image%202026-09-03%20at%209.45.21%20AM.jpeg" alt="Giruth Sport Colección" class="w-full h-full object-cover">
                 </div>
             </div>
         </div>
@@ -82,9 +82,9 @@
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Producto 1 (Abre el modal) -->
-                <div class="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 flex flex-col group cursor-pointer hover:border-brand transition" onclick="abrirCatalogo()">
+                <div class="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 flex flex-col group cursor-pointer hover:border-brand transition shadow-lg" onclick="abrirCatalogo()">
                     <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.26%20AM.jpeg" alt="Uniformes de Fútbol" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="https://raw.githubusercontent.com/landingpagedemiproyecto/-giruthsport/main/WhatsApp%20Image%202026-09-03%20at%209.45.26%20AM.jpeg" alt="Uniformes de Fútbol" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <span class="absolute top-4 left-4 bg-brand text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Catálogo 128+ Modelos</span>
                     </div>
                     <div class="p-6 flex flex-col flex-grow justify-between">
@@ -99,9 +99,9 @@
                 </div>
 
                 <!-- Producto 2 -->
-                <div class="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 flex flex-col group">
+                <div class="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 flex flex-col group shadow-lg">
                     <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.22%20AM.jpeg" alt="Sudaderas Familiares" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="https://raw.githubusercontent.com/landingpagedemiproyecto/-giruthsport/main/WhatsApp%20Image%202026-09-03%20at%209.45.22%20AM.jpeg" alt="Sudaderas Familiares" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="p-6 flex flex-col flex-grow justify-between">
                         <div>
@@ -115,9 +115,9 @@
                 </div>
 
                 <!-- Producto 3 -->
-                <div class="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 flex flex-col group">
+                <div class="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 flex flex-col group shadow-lg">
                     <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.21%20AM.jpeg" alt="Buzos Fútboleros" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="https://raw.githubusercontent.com/landingpagedemiproyecto/-giruthsport/main/WhatsApp%20Image%202026-09-03%20at%209.45.21%20AM.jpeg" alt="Buzos Fútboleros" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="p-6 flex flex-col flex-grow justify-between">
                         <div>
@@ -146,7 +146,7 @@
                 <p class="text-slate-400 max-w-2xl mx-auto">Elige la referencia que te guste y haz clic en cotizar. Nosotros nos encargamos de personalizarla con tu logo y colores.</p>
             </div>
 
-            <!-- Contenedor donde JS inyectará las 128 imágenes -->
+            <!-- Contenedor donde JS inyectará las imágenes -->
             <div id="gridCatalogo" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 pb-20">
                 <!-- Se llena con JavaScript -->
             </div>
@@ -163,17 +163,28 @@
                 <h4 class="font-bold text-lg">Fabricación Propia</h4>
                 <p class="text-slate-400 text-sm">Control de calidad en costura, telas y sublimación.</p>
             </div>
-            <!-- ... (Otras ventajas) ... -->
+            <div class="p-6 space-y-3">
+                <div class="w-12 h-12 bg-brand/20 text-brand rounded-full flex items-center justify-center mx-auto text-xl">
+                    <i class="fa-solid fa-shirt"></i>
+                </div>
+                <h4 class="font-bold text-lg">Diseño Personalizado</h4>
+                <p class="text-slate-400 text-sm">Creamos tu idea desde cero para tu equipo, familia o marca.</p>
+            </div>
+            <div class="p-6 space-y-3">
+                <div class="w-12 h-12 bg-brand/20 text-brand rounded-full flex items-center justify-center mx-auto text-xl">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <h4 class="font-bold text-lg">Envíos Seguros</h4>
+                <p class="text-slate-400 text-sm">Despachos rápidos desde Bogotá a todo el territorio nacional.</p>
+            </div>
         </div>
     </section>
 
     <!-- SCRIPTS PARA EL MODAL Y EL CATÁLOGO -->
     <script>
-        // ==========================================
-        // 1. AGREGA TUS 128 IMÁGENES AQUÍ
-        // Pega los nombres exactos de tus archivos .jpg
-        // separados por comas y entre comillas.
-        // ==========================================
+        // Aquí agregué la ruta absoluta base a tu repositorio para asegurar que carguen.
+        const baseUrl = "https://raw.githubusercontent.com/landingpagedemiproyecto/-giruthsport/main/";
+
         const imagenesCatalogo = [
             "1000097019.jpg",
             "1000107217.jpg",
@@ -190,28 +201,26 @@
             "1000269719.jpg",
             "1000269720.jpg",
             "1000269721.jpg"
-            // Añade el resto de tus imágenes debajo de esta línea:
-            // "tu_imagen_16.jpg",
-            // "tu_imagen_17.jpg",
+            // Puedes seguir agregando el resto de tus 128 imágenes abajo,
+            // cargaran de forma automática siempre que estén subidas en el GitHub.
         ];
 
-        // Lógica para renderizar el catálogo dinámicamente
         function cargarCatalogo() {
             const grid = document.getElementById('gridCatalogo');
-            grid.innerHTML = ''; // Limpiar por si acaso
+            grid.innerHTML = ''; 
 
             imagenesCatalogo.forEach(img => {
-                // Sacamos el número de referencia del nombre del archivo (quitando el .jpg)
                 const referencia = img.replace('.jpg', '');
-                
-                // Mensaje de WhatsApp dinámico para cada referencia
                 const wsMensaje = `Hola, quiero cotizar la camiseta Ref: ${referencia}`;
                 const wsEnlace = `https://wa.me/573059390106?text=${encodeURIComponent(wsMensaje)}`;
+                
+                // Unimos la URL base de tu GitHub con el nombre de la imagen
+                const urlImagenCompleta = baseUrl + img;
 
                 const cardHTML = `
                     <div class="bg-neutral-900 rounded-xl overflow-hidden border border-neutral-800 flex flex-col group shadow-lg">
                         <div class="aspect-square overflow-hidden relative bg-black">
-                            <img src="${img}" alt="Camiseta ${referencia}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+                            <img src="${urlImagenCompleta}" alt="Camiseta ${referencia}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
                         </div>
                         <div class="p-3 flex flex-col justify-between flex-grow bg-neutral-900">
                             <span class="text-[10px] md:text-xs text-slate-500 font-mono mb-2">Ref: ${referencia}</span>
@@ -225,15 +234,13 @@
             });
         }
 
-        // Lógica de Modal (Abrir/Cerrar)
         const modal = document.getElementById('modalCatalogo');
         const body = document.body;
 
         function abrirCatalogo() {
             modal.classList.remove('hidden');
-            body.classList.add('overflow-hidden'); // Evita que el fondo haga scroll
+            body.classList.add('overflow-hidden'); 
             
-            // Si el grid está vacío, cargamos las imágenes
             if(document.getElementById('gridCatalogo').innerHTML.trim() === '') {
                 cargarCatalogo();
             }
@@ -244,7 +251,6 @@
             body.classList.remove('overflow-hidden');
         }
 
-        // Cerrar modal con la tecla ESC
         document.addEventListener('keydown', function(event) {
             if (event.key === "Escape" && !modal.classList.contains('hidden')) {
                 cerrarCatalogo();
@@ -253,4 +259,3 @@
     </script>
 </body>
 </html>
-
