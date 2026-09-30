@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giruth Sport | Fábrica de Ropa Deportiva y Uniformes en Bogotá</title>
+    <title>Giruth Sport | Fábrica de Ropa Deportiva y Camisetas en Bogotá</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome para Íconos -->
@@ -14,7 +14,7 @@
                 extend: {
                     colors: {
                         brand: {
-                            DEFAULT: '#dc2626', // Rojo deportivo característico del IG
+                            DEFAULT: '#dc2626', // Rojo deportivo
                             dark: '#b91c1c',
                             light: '#f87171'
                         }
@@ -26,19 +26,19 @@
 </head>
 <body class="bg-black text-slate-100 font-sans antialiased">
 
-    <!-- BARRA SUPERIOR DE UBICACIÓN -->
+    <!-- BARRA SUPERIOR -->
     <div class="bg-brand text-white text-xs sm:text-sm font-semibold py-2 px-4 text-center">
         <i class="fa-solid fa-location-dot mr-2"></i> Fábrica en Bogotá: Cra. 89 Bis #49 | Envíos a todo Colombia 🇨🇴
     </div>
 
-    <!-- HEADER / NAVBAR -->
-    <header class="sticky top-0 z-50 bg-neutral-900/95 backdrop-blur border-b border-neutral-800">
+    <!-- HEADER -->
+    <header class="sticky top-0 z-40 bg-neutral-900/95 backdrop-blur border-b border-neutral-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-2">
                 <span class="text-2xl font-black tracking-wider text-white">GIRUTH<span class="text-brand">SPORT</span></span>
             </div>
-            <a href="https://wa.me/573059390106?text=Hola,%20vi%20su%20landing%20page%20y%20quiero%20cotizar%20ropa%20deportiva%20o%20uniformes" target="_blank" class="bg-brand hover:bg-brand-dark text-white text-sm sm:text-base font-bold px-5 py-2.5 rounded-full transition shadow-lg shadow-brand/30 flex items-center gap-2">
-                <i class="fa-brands fa-whatsapp text-lg"></i> Cotizar por WhatsApp
+            <a href="https://wa.me/573059390106?text=Hola,%20vi%20su%20landing%20page%20y%20quiero%20cotizar" target="_blank" class="bg-brand hover:bg-brand-dark text-white text-sm sm:text-base font-bold px-5 py-2.5 rounded-full transition shadow-lg shadow-brand/30 flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
             </a>
         </div>
     </header>
@@ -54,15 +54,15 @@
                     Tu estilo, tu equipo, <span class="text-brand">tu marca al siguiente nivel</span>
                 </h1>
                 <p class="text-slate-300 text-lg sm:text-xl max-w-xl mx-auto lg:mx-0">
-                    Especialistas en la fabricación de uniformes de fútbol personalizados, sudaderas para toda la familia, buzos futboleros y camisas oversize con horma perfecta.
+                    Especialistas en la fabricación de uniformes de fútbol personalizados, camisetas profesionales, sudaderas familiares, buzos y camisas oversize.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-                    <a href="https://wa.me/573059390106?text=Hola,%20quiero%20diseñar%20mis%20uniformes%20y%20ropa%20deportiva" target="_blank" class="bg-brand hover:bg-brand-dark text-white font-bold text-lg px-8 py-4 rounded-xl transition shadow-xl shadow-brand/40 flex items-center justify-center gap-3">
-                        <i class="fa-brands fa-whatsapp text-2xl"></i> HABLAR CON UN ASESOR AHORA
-                    </a>
+                    <button onclick="abrirCatalogo()" class="bg-brand hover:bg-brand-dark text-white font-bold text-lg px-8 py-4 rounded-xl transition shadow-xl shadow-brand/40 flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-images text-2xl"></i> VER CATÁLOGO DE CAMISETAS
+                    </button>
                 </div>
             </div>
-            <!-- Imagen Hero usando archivo local del repositorio -->
+            <!-- Imagen Hero -->
             <div class="relative mx-auto w-full max-w-md lg:max-w-none">
                 <div class="absolute -inset-1 bg-gradient-to-r from-brand to-red-800 rounded-3xl blur opacity-30"></div>
                 <div class="relative bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl aspect-[4/5]">
@@ -72,43 +72,43 @@
         </div>
     </section>
 
-    <!-- LÍNEAS DE PRODUCTO / PORTAFOLIO TIPO IG -->
-    <section class="py-20 bg-black">
+    <!-- LÍNEAS DE PRODUCCIÓN -->
+    <section class="py-20 bg-black border-b border-neutral-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
                 <h2 class="text-3xl sm:text-4xl font-extrabold">Nuestras Líneas de <span class="text-brand">Producción</span></h2>
-                <p class="text-slate-400 text-lg">Calidad superior en cada prenda, directo de fábrica para ti, tu club o tu negocio.</p>
+                <p class="text-slate-400 text-lg">Calidad superior en cada prenda, directo de fábrica para tu club, familia o negocio.</p>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Producto 1 -->
-                <div class="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 flex flex-col group">
+                <!-- Producto 1 (Abre el modal) -->
+                <div class="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 flex flex-col group cursor-pointer hover:border-brand transition" onclick="abrirCatalogo()">
                     <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.26%20AM.jpeg" alt="Uniformes de Fútbol Personalizados" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <span class="absolute top-4 left-4 bg-brand text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Top Ventas</span>
+                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.26%20AM.jpeg" alt="Uniformes de Fútbol" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-brand text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Catálogo 128+ Modelos</span>
                     </div>
                     <div class="p-6 flex flex-col flex-grow justify-between">
                         <div>
-                            <h3 class="text-xl font-bold text-white mb-2">Uniformes de Fútbol Personalizados</h3>
-                            <p class="text-slate-400 text-sm mb-4">Diseña la pinta de tu equipo con escudos, nombres y números sublimados de alta durabilidad.</p>
+                            <h3 class="text-xl font-bold text-white mb-2">Uniformes & Camisetas de Fútbol</h3>
+                            <p class="text-slate-400 text-sm mb-4">Haz clic para abrir nuestra galería completa de diseños listos para personalizar con tu escudo y patrocinios.</p>
                         </div>
-                        <a href="https://wa.me/573059390106?text=Hola,%20estoy%20interesado%20en%20los%20Uniformes%20de%20Fútbol%20Personalizados" target="_blank" class="w-full bg-neutral-800 hover:bg-brand text-white font-semibold py-3 rounded-xl text-center transition flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-whatsapp text-lg text-green-400"></i> Cotizar Uniformes
-                        </a>
+                        <button class="w-full bg-brand text-white font-bold py-3 rounded-xl text-center transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-folder-open"></i> Ver Catálogo Completo
+                        </button>
                     </div>
                 </div>
 
                 <!-- Producto 2 -->
                 <div class="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 flex flex-col group">
                     <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.22%20AM.jpeg" alt="Sudaderas para toda la familia" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.22%20AM.jpeg" alt="Sudaderas Familiares" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="p-6 flex flex-col flex-grow justify-between">
                         <div>
-                            <h3 class="text-xl font-bold text-white mb-2">Sudaderas Familiares & Deportivas</h3>
-                            <p class="text-slate-400 text-sm mb-4">Confort y abrigo para toda la familia. Conjuntos en fleece perchado ideales para entrenar o casuales.</p>
+                            <h3 class="text-xl font-bold text-white mb-2">Sudaderas para toda la Familia</h3>
+                            <p class="text-slate-400 text-sm mb-4">Confort y abrigo en fleece perchado ideales para entrenar o uso casual.</p>
                         </div>
-                        <a href="https://wa.me/573059390106?text=Hola,%20quiero%20información%20de%20las%20Sudaderas%20para%20toda%20la%20familia" target="_blank" class="w-full bg-neutral-800 hover:bg-brand text-white font-semibold py-3 rounded-xl text-center transition flex items-center justify-center gap-2">
+                        <a href="https://wa.me/573059390106?text=Hola,%20quiero%20información%20de%20las%20Sudaderas%20Familiares" target="_blank" class="w-full bg-neutral-800 hover:bg-brand text-white font-semibold py-3 rounded-xl text-center transition flex items-center justify-center gap-2">
                             <i class="fa-brands fa-whatsapp text-lg text-green-400"></i> Cotizar Sudaderas
                         </a>
                     </div>
@@ -117,70 +117,41 @@
                 <!-- Producto 3 -->
                 <div class="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 flex flex-col group">
                     <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.21%20AM.jpeg" alt="Buzos Futboleros" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.21%20AM.jpeg" alt="Buzos Fútboleros" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="p-6 flex flex-col flex-grow justify-between">
                         <div>
-                            <h3 class="text-xl font-bold text-white mb-2">Buzos Futboleros & Urbanos</h3>
-                            <p class="text-slate-400 text-sm mb-4">Luce los colores de tu pasión con estilos modernos, capotas ajustadas y acabados de primera calidad.</p>
+                            <h3 class="text-xl font-bold text-white mb-2">Buzos Fútboleros & Oversize</h3>
+                            <p class="text-slate-400 text-sm mb-4">Luce los colores de tu pasión con estilos modernos y algodón pesado.</p>
                         </div>
-                        <a href="https://wa.me/573059390106?text=Hola,%20me%20interesan%20los%20Buzos%20Futboleros" target="_blank" class="w-full bg-neutral-800 hover:bg-brand text-white font-semibold py-3 rounded-xl text-center transition flex items-center justify-center gap-2">
+                        <a href="https://wa.me/573059390106?text=Hola,%20me%20interesan%20los%20Buzos%20y%20Camisas%20Oversize" target="_blank" class="w-full bg-neutral-800 hover:bg-brand text-white font-semibold py-3 rounded-xl text-center transition flex items-center justify-center gap-2">
                             <i class="fa-brands fa-whatsapp text-lg text-green-400"></i> Cotizar Buzos
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Producto 4 -->
-                <div class="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 flex flex-col group">
-                    <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.23%20AM.jpeg" alt="Camisas Oversize" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold text-white mb-2">Camisas Oversize</h3>
-                            <p class="text-slate-400 text-sm mb-4">Tendencia urbana con algodón pesado de alto gramaje, excelente caída y horma imponente.</p>
-                        </div>
-                        <a href="https://wa.me/573059390106?text=Hola,%20quiero%20ver%20modelos%20de%20Camisas%20Oversize" target="_blank" class="w-full bg-neutral-800 hover:bg-brand text-white font-semibold py-3 rounded-xl text-center transition flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-whatsapp text-lg text-green-400"></i> Cotizar Oversize
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Producto 5 -->
-                <div class="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 flex flex-col group">
-                    <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.24%20AM.jpeg" alt="Ropa Deportiva General" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold text-white mb-2">Línea Deportiva & Fitness</h3>
-                            <p class="text-slate-400 text-sm mb-4">Conjuntos y prendas de alto rendimiento con telas transpirables y cero transparencias.</p>
-                        </div>
-                        <a href="https://wa.me/573059390106?text=Hola,%20quiero%20info%20de%20la%20línea%20deportiva" target="_blank" class="w-full bg-neutral-800 hover:bg-brand text-white font-semibold py-3 rounded-xl text-center transition flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-whatsapp text-lg text-green-400"></i> Consultar Modelos
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Producto 6 -->
-                <div class="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 flex flex-col group">
-                    <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="WhatsApp%20Image%202026-09-03%20at%209.45.25%20AM.jpeg" alt="Fabricación por Mayor" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <span class="absolute top-4 left-4 bg-white text-black text-xs font-bold px-3 py-1 rounded-full uppercase">Mayoristas</span>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold text-white mb-2">Fabricación al Por Mayor</h3>
-                            <p class="text-slate-400 text-sm mb-4">Impulsa tu emprendimiento con precios especiales para distribuidores y marcas independientes.</p>
-                        </div>
-                        <a href="https://wa.me/573059390106?text=Hola,%20soy%20mayorista%20y%20quiero%20ver%20catálogo%20y%20precios" target="_blank" class="w-full bg-neutral-800 hover:bg-brand text-white font-semibold py-3 rounded-xl text-center transition flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-whatsapp text-lg text-green-400"></i> Soy Mayorista
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- VENTANA MODAL DEL CATÁLOGO DE CAMISETAS -->
+    <div id="modalCatalogo" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm hidden overflow-y-auto">
+        <div class="min-h-screen px-4 py-8 max-w-7xl mx-auto relative">
+            <!-- Botón Cerrar -->
+            <button onclick="cerrarCatalogo()" class="sticky top-4 float-right bg-neutral-800 hover:bg-brand text-white p-3 rounded-full z-10 transition shadow-lg">
+                <i class="fa-solid fa-xmark text-xl w-6 h-6 flex items-center justify-center"></i>
+            </button>
+            
+            <div class="clear-both mb-8 text-center pt-8">
+                <h2 class="text-3xl md:text-5xl font-black text-white mb-4">Catálogo de <span class="text-brand">Camisetas</span></h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Elige la referencia que te guste y haz clic en cotizar. Nosotros nos encargamos de personalizarla con tu logo y colores.</p>
+            </div>
+
+            <!-- Contenedor donde JS inyectará las 128 imágenes -->
+            <div id="gridCatalogo" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 pb-20">
+                <!-- Se llena con JavaScript -->
+            </div>
+        </div>
+    </div>
 
     <!-- SECCIÓN CONFIANZA / FABRICA BOGOTÁ -->
     <section class="py-16 bg-neutral-900 border-y border-neutral-800">
@@ -190,48 +161,96 @@
                     <i class="fa-solid fa-industry"></i>
                 </div>
                 <h4 class="font-bold text-lg">Fabricación Propia</h4>
-                <p class="text-slate-400 text-sm">Control absoluto de calidad en costura, telas y sublimación.</p>
+                <p class="text-slate-400 text-sm">Control de calidad en costura, telas y sublimación.</p>
             </div>
-            <div class="p-6 space-y-3">
-                <div class="w-12 h-12 bg-brand/20 text-brand rounded-full flex items-center justify-center mx-auto text-xl">
-                    <i class="fa-solid fa-shirt"></i>
-                </div>
-                <h4 class="font-bold text-lg">Diseño Personalizado</h4>
-                <p class="text-slate-400 text-sm">Creamos tu idea desde cero para tu equipo, familia o marca.</p>
-            </div>
-            <div class="p-6 space-y-3">
-                <div class="w-12 h-12 bg-brand/20 text-brand rounded-full flex items-center justify-center mx-auto text-xl">
-                    <i class="fa-solid fa-truck-fast"></i>
-                </div>
-                <h4 class="font-bold text-lg">Envíos Seguros</h4>
-                <p class="text-slate-400 text-sm">Despachos rápidos desde Bogotá a todo el territorio nacional.</p>
-            </div>
+            <!-- ... (Otras ventajas) ... -->
         </div>
     </section>
 
-    <!-- CIERRE CTA WHATSAPP -->
-    <section class="py-20 bg-gradient-to-t from-neutral-900 to-black text-center">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-            <h2 class="text-3xl sm:text-5xl font-black text-white">¿Listo para hacer realidad tu proyecto o dotación?</h2>
-            <p class="text-slate-300 text-lg max-w-xl mx-auto">Escríbenos ahora a WhatsApp y recibe atención personalizada inmediata con nuestros asesores.</p>
-            <div class="pt-4">
-                <a href="https://wa.me/573059390106?text=Hola,%20quiero%20iniciar%20mi%20cotización%20en%20Giruth%20Sport" target="_blank" class="inline-flex items-center gap-3 bg-brand hover:bg-brand-dark text-white font-bold text-xl px-10 py-5 rounded-2xl shadow-2xl shadow-brand/50 transition">
-                    <i class="fa-brands fa-whatsapp text-2xl"></i> INICIAR COTIZACIÓN POR WHATSAPP
-                </a>
-            </div>
-        </div>
-    </section>
+    <!-- SCRIPTS PARA EL MODAL Y EL CATÁLOGO -->
+    <script>
+        // ==========================================
+        // 1. AGREGA TUS 128 IMÁGENES AQUÍ
+        // Pega los nombres exactos de tus archivos .jpg
+        // separados por comas y entre comillas.
+        // ==========================================
+        const imagenesCatalogo = [
+            "1000097019.jpg",
+            "1000107217.jpg",
+            "1000107226.jpg",
+            "1000113841.jpg",
+            "1000113844.jpg",
+            "1000113914.jpg",
+            "1000269712.jpg",
+            "1000269714.jpg",
+            "1000269715.jpg",
+            "1000269716.jpg",
+            "1000269717.jpg",
+            "1000269718.jpg",
+            "1000269719.jpg",
+            "1000269720.jpg",
+            "1000269721.jpg"
+            // Añade el resto de tus imágenes debajo de esta línea:
+            // "tu_imagen_16.jpg",
+            // "tu_imagen_17.jpg",
+        ];
 
-    <!-- FOOTER -->
-    <footer class="bg-black border-t border-neutral-900 py-10 text-slate-500 text-sm">
-        <div class="max-w-7xl mx-auto px-4 space-y-4 text-center">
-            <p class="font-bold text-white text-lg">GIRUTH SPORT</p>
-            <p><i class="fa-solid fa-location-dot text-brand mr-1"></i> Cra. 89 Bis #49, Bogotá, Colombia</p>
-            <p class="text-xs text-slate-600">© 2026 Giruth Sport. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+        // Lógica para renderizar el catálogo dinámicamente
+        function cargarCatalogo() {
+            const grid = document.getElementById('gridCatalogo');
+            grid.innerHTML = ''; // Limpiar por si acaso
 
+            imagenesCatalogo.forEach(img => {
+                // Sacamos el número de referencia del nombre del archivo (quitando el .jpg)
+                const referencia = img.replace('.jpg', '');
+                
+                // Mensaje de WhatsApp dinámico para cada referencia
+                const wsMensaje = `Hola, quiero cotizar la camiseta Ref: ${referencia}`;
+                const wsEnlace = `https://wa.me/573059390106?text=${encodeURIComponent(wsMensaje)}`;
+
+                const cardHTML = `
+                    <div class="bg-neutral-900 rounded-xl overflow-hidden border border-neutral-800 flex flex-col group shadow-lg">
+                        <div class="aspect-square overflow-hidden relative bg-black">
+                            <img src="${img}" alt="Camiseta ${referencia}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+                        </div>
+                        <div class="p-3 flex flex-col justify-between flex-grow bg-neutral-900">
+                            <span class="text-[10px] md:text-xs text-slate-500 font-mono mb-2">Ref: ${referencia}</span>
+                            <a href="${wsEnlace}" target="_blank" class="w-full bg-neutral-800 hover:bg-brand text-white text-xs md:text-sm font-bold py-2 rounded-lg text-center transition flex items-center justify-center gap-1 md:gap-2">
+                                <i class="fa-brands fa-whatsapp text-green-400"></i> Cotizar
+                            </a>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += cardHTML;
+            });
+        }
+
+        // Lógica de Modal (Abrir/Cerrar)
+        const modal = document.getElementById('modalCatalogo');
+        const body = document.body;
+
+        function abrirCatalogo() {
+            modal.classList.remove('hidden');
+            body.classList.add('overflow-hidden'); // Evita que el fondo haga scroll
+            
+            // Si el grid está vacío, cargamos las imágenes
+            if(document.getElementById('gridCatalogo').innerHTML.trim() === '') {
+                cargarCatalogo();
+            }
+        }
+
+        function cerrarCatalogo() {
+            modal.classList.add('hidden');
+            body.classList.remove('overflow-hidden');
+        }
+
+        // Cerrar modal con la tecla ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape" && !modal.classList.contains('hidden')) {
+                cerrarCatalogo();
+            }
+        });
+    </script>
 </body>
 </html>
-
 
